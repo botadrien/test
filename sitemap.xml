@@ -9,4 +9,12 @@
   <url>
     <loc>https://botadrien.github.io/test/test/</loc>
   </url>
+  <url>
+    <loc>https://botadrien.github.io/test/blog/123/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://botadrien.github.io/test/blog/ok/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
 </urlset>

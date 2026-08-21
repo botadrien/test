@@ -4,6 +4,19 @@
     <title>test</title>
     <link>https://botadrien.github.io/test/</link>
     <description>test</description>
-
+    <item>
+      <title>123</title>
+      <link>https://botadrien.github.io/test/blog/123/</link>
+      <guid>https://botadrien.github.io/test/blog/123/</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <description>article super</description>
+    </item>
+    <item>
+      <title>Ok</title>
+      <link>https://botadrien.github.io/test/blog/ok/</link>
+      <guid>https://botadrien.github.io/test/blog/ok/</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <description>super</description>
+    </item>
   </channel>
 </rss>
