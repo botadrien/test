@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://botadrien.github.io/test/favicon.svg" />
+    <link rel="stylesheet" href="https://botadrien.github.io/test/main.css?h=ee7aa909c3ddd2338904d14ba9a27a6c2757ff4141cedbcf9efe15337ec8d16e" />
+    <link rel="alternate" type="application/rss+xml" title="test" href="https://botadrien.github.io/test/blog/rss.xml" />
+    <script src="https://botadrien.github.io/test/theme-init.js?h=8215fe6b6c63c370e580e583ea0670170f72a349bb217b3bdb5dd635716d5a1f"></script>
+    
+<title>test</title>
+<meta name="description" content="" />
+<meta property="og:title" content="test" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+
+
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <header class="site-header">
+  <div class="header-content">
+    <!-- Mobile hamburger button - far left on mobile -->
+    <button class="hamburger-toggle mobile-only" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="hamburger-line" d="M3 6h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="hamburger-line" d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="hamburger-line" d="M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="site-title">
+      <a href="https://botadrien.github.io/test">
+        
+        <span class="title-text">test</span>
+        
+      </a>
+    </div>
+
+    <div class="header-controls">
+      <nav class="main-navigation" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          
+          <li><a href="https://botadrien.github.io/test" class="nav-link">Accueil</a></li>
+          
+          <li><a href="https://botadrien.github.io/test/blog" class="nav-link">Blog</a></li>
+          
+        </ul>
+      </nav>
+
+      <div class="mobile-controls">
+        
+        <button type="button" class="theme-toggle" data-theme-cycle aria-label="Toggle theme: light, dark, or auto" title="Toggle theme">
+          <span class="theme-icon theme-icon-light" aria-hidden="true"></span>
+          <span class="theme-icon theme-icon-dark" aria-hidden="true"></span>
+          <span class="theme-icon theme-icon-auto" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+  <ul class="mobile-nav-list">
+    
+    <li><a href="https://botadrien.github.io/test" class="mobile-nav-link">Accueil</a></li>
+    
+    <li><a href="https://botadrien.github.io/test/blog" class="mobile-nav-link">Blog</a></li>
+    
+  </ul>
+</nav>
+
+
+<script>
+  // Theme toggle: cycles light -> dark -> auto (auto follows the OS, live-updating)
+  (function () {
+    const root = document.documentElement;
+    const btn = document.querySelector('[data-theme-cycle]');
+    if (!btn) return;
+    const order = ['light', 'dark', 'auto'];
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function systemTheme() { return mql.matches ? 'dark' : 'light'; }
+
+    function apply(mode) {
+      root.dataset.theme = mode === 'auto' ? systemTheme() : mode;
+      root.dataset.themeMode = mode;
+      btn.setAttribute('title', 'Theme: ' + mode + ' (click to change)');
+      try { localStorage.setItem('theme', mode); } catch (e) {}
+    }
+
+    btn.addEventListener('click', function () {
+      const current = localStorage.getItem('theme') || 'auto';
+      apply(order[(order.indexOf(current) + 1) % order.length]);
+    });
+
+    // Reflect the stored/initial mode in the tooltip on load
+    apply(localStorage.getItem('theme') || 'auto');
+
+    // Keep "auto" in sync when the OS theme changes
+    function onSystemChange() {
+      if ((localStorage.getItem('theme') || 'auto') === 'auto') {
+        root.dataset.theme = systemTheme();
+      }
+    }
+    if (mql.addEventListener) { mql.addEventListener('change', onSystemChange); }
+    else if (mql.addListener) { mql.addListener(onSystemChange); }
+  })();
+
+  // Hamburger menu functionality
+  (function () {
+    const hamburgerToggle = document.getElementById('hamburger-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+
+    if (!hamburgerToggle || !mobileMenu) return;
+
+    hamburgerToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('active');
+
+      if (isOpen) {
+        mobileMenu.classList.remove('active');
+        hamburgerToggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+      } else {
+        mobileMenu.classList.add('active');
+        hamburgerToggle.setAttribute('aria-expanded', 'true');
+        body.style.overflow = 'hidden';
+      }
+    });
+
+    // Close menu when clicking on a link
+    const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        hamburgerToggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+      });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        hamburgerToggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+      }
+    });
+  })();
+</script>
+
+      <main class="main-content">
+        <div class="content">
+          
+
+
+<div class="landing-page">
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">test</h1>
+      <hr class="hero-rule" />
+    </div>
+  </section>
+
+  
+
+  
+</div>
+
+        </div>
+      </main>
+      <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-info">
+      <p class="copyright">
+        © 2026 Auteur du site. All rights reserved.
+      </p>
+      <p class="theme-credit">
+        Powered by <a href="https://github.com/botadrien/stamp-cms" target="_blank" rel="noopener">Stamp CMS</a>
+      </p>
+    </div>
+
+    <div class="social-links">
+      <a href="https://botadrien.github.io/test/blog/rss.xml" class="social-link" aria-label="RSS feed">
+        <span class="social-icon" style="-webkit-mask-image: url('https://botadrien.github.io/test/icons/rss.svg'); mask-image: url('https://botadrien.github.io/test/icons/rss.svg');" aria-hidden="true"></span>
+      </a>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </body>
+</html>
