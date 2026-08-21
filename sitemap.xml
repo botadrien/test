@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://botadrien.github.io/test/</loc>
-    </url>
-    <url>
-        <loc>https://botadrien.github.io/test/blog/</loc>
-    </url>
-    <url>
-        <loc>https://botadrien.github.io/test/categories/</loc>
-    </url>
-    <url>
-        <loc>https://botadrien.github.io/test/tags/</loc>
-    </url>
+  <url>
+    <loc>https://botadrien.github.io/test/</loc>
+  </url>
+  <url>
+    <loc>https://botadrien.github.io/test/blog/</loc>
+  </url>
+  <url>
+    <loc>https://botadrien.github.io/test/test/</loc>
+  </url>
 </urlset>
